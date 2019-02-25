@@ -1,4 +1,4 @@
-# Cards
+# Identicon
 ## Description 
 
 Udemy Course [The Complete Elixir and Phoenix Bootcamp](https://www.udemy.com/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/learn/v4/content)

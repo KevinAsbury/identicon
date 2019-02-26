@@ -3,6 +3,8 @@ defmodule Identicon do
     input
     |> hash_input
     |> list_of_numbers
+    |> image_struct
+    |> color_picker
   end
 
   def hash_input(input) do
@@ -11,5 +13,14 @@ defmodule Identicon do
 
   def list_of_numbers(input) do
     :binary.bin_to_list(input)
+  end
+
+  def image_struct(input) do
+    %Identicon.Image{hex: input}
+  end
+
+  def color_picker(input) do
+    %Identicon.Image{hex: [r, g, b | _tail]} = input
+    [r, g, b]
   end
 end

@@ -24,9 +24,10 @@ defmodule Identicon do
     %Identicon.Image{input | color: {r, g, b}}
   end
   
-  def build_grid(%Identicon.Image{hex: hex} = input) do
+  def build_grid(%Identicon.Image{hex: hex}) do
     hex
-    |>Enum.chunk_every(3)
+    |> Enum.chunk_every(3, 3, :discard)
+    |> Enum.map(&mirror_row/1)
   end
 
   def mirror_row(row) do

@@ -28,6 +28,8 @@ defmodule Identicon do
     hex
     |> Enum.chunk_every(3, 3, :discard)
     |> Enum.map(&mirror_row/1)
+    |> List.flatten
+    |> Enum.with_index
   end
 
   def mirror_row(row) do
